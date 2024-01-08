@@ -1,4 +1,4 @@
 weather-app/keys.json
 weather-app/node_modules
 web-server/node_modules
-web-server/private/keys.json
+web-server/private/

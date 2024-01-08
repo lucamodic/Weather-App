@@ -11,15 +11,15 @@ const location = process.argv[2]
 if(!location){
     failure('Enter a location')
 } else {
-    geocode(location, (error, data) => {
+    geocode(location, (error, { latitude, longitude, location } = {}) => {
         if (error) {
             return failure(error)
         }
-        forecast(data.latitude, data.longitude, (error, forecastData) => {
+        forecast(latitude, longitude, (error, forecastData) => {
             if (error) {
                 return failure(error)
             }
-            success(data.location)
+            success(location)
             success(forecastData)
         })
     })
